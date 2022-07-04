@@ -1,25 +1,77 @@
+<!DOCTYPE html><head></head><body><title>FAS | TV</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="https://cdn.wapka.org/007ho2/7f89537eaf606bff49f5cc1a7c24dbca/bootstrap-min.css" />
+<link rel="stylesheet" href="https://cdn.wapka.org/007ho3/2010fa9fb07541adc78a1ec0a8a4fbbf/bootstrap-theme-min.css" />
+<link rel="stylesheet" href="https://cdn.wapka.org/007ho9/5148816261f8045a39260b530ffaeef1/style.css" />
+<script src="https://cdn.wapka.org/007hob/4b57cf46dc8cb95c4cca54afc85e9540/jquery-min.js"></script>
+<script src="https://cdn.wapka.org/007hnx/2f34b630ffe30ba2ff2b91e3f3c322a1/bootstrap-min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet" />
+<!-- Default theme. ~960B -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@vime/core@^5/themes/default.css"
+/>
+
+<!-- Optional light theme (extends default). ~400B -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@vime/core@^5/themes/light.css"
+/>
+
+<!-- Library and all of its components are lazy loaded, so nothing to sweat about here. ~3kB -->
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/@vime/core@^5/dist/vime/vime.esm.js"
+></script>
+<div class="container">
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container-fluid wik">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<b><a class="navbar-brand" href="/index.html">FAS</a></b>
+</div>
+<div class="collapse navbar-collapse" id="myNavbar">
+<ul class="nav navbar-nav">
+<li class="active"><a href="/index.html">Home</a></li>
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">bom sms<span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="phd">bom sms PHD</a></li>
+<li><a href="wa">bom sma WA</a></li>
+<li><a href="sms">bom sms TOKOPED</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="col-lg-12 wik" align="center" style="margin-top: 90px; margin-bottom: 20px; padding-bottom: 20px;">
 <div>
-  <vm-player
+<marquee class="wik list-group-item h text-muted" style="margin-top: 5%;" scrollamount="3" direction="left">...........TRIMAKASI SUDAH MENGGUNAKAN WEB INI...........</marquee>
+</div>
+<br>
+<br>
+	<vm-player
   theme="dark"
   style="--vm-player-theme: #e86c8b;"
 >
-  <vm-video
-    cross-origin
-    poster="https://media.vimejs.com/poster.png"
-  >
+<vm-hls class="wik h">
     <source 
       data-src="https://media.vimejs.com/720p.mp4" 
       type="video/mp4"
     />
-    <track 
-      default 
-      kind="subtitles" 
-      src="https://media.vimejs.com/subs/english.vtt" 
-      srclang="en" 
-      label="English" 
-    />
-  </vm-video>
-  
-  <vm-default-ui><vm-default-ui>
+</vm-hls>
+<vm-default-ui><vm-default-ui>
 </vm-player>
+<div class="footer fixed-bottom text-center text-white wik">
+<b><span class="glyphicon"></span>© FAS | 2022</b>
+<br />
 </div>
+</div>
+</div>
+</div></body></html>
