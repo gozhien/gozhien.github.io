@@ -2,13 +2,16 @@
 <html lang="de">
     <head>
         <meta charset="UTF-8">
-        <title>F1TV-Enhanced</title>
+        <title>FAS | LIVE</title>
 
         <link rel="icon" href="favicon.ico">
-
-        <link rel="stylesheet" href="styles.css">
-
-
+            
+            <link rel="stylesheet" href="https://cdn.wapka.org/007ho2/7f89537eaf606bff49f5cc1a7c24dbca/bootstrap-min.css" />
+<link rel="stylesheet" href="https://cdn.wapka.org/007ho3/2010fa9fb07541adc78a1ec0a8a4fbbf/bootstrap-theme-min.css" />
+<link rel="stylesheet" href="https://cdn.wapka.org/007ho9/5148816261f8045a39260b530ffaeef1/style.css" />
+<script src="https://cdn.wapka.org/007hob/4b57cf46dc8cb95c4cca54afc85e9540/jquery-min.js"></script>
+<script src="https://cdn.wapka.org/007hnx/2f34b630ffe30ba2ff2b91e3f3c322a1/bootstrap-min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet" />
         <!-- Default theme. ~960B -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vime/core@^5/themes/default.css"/>
 
@@ -18,33 +21,40 @@
         <!-- Library and all of its components are lazy loaded, so nothing to sweat about here. ~3kB -->
         <script type="module" src="https://cdn.jsdelivr.net/npm/@vime/core@^5/dist/vime/vime.esm.js"></script>
     </head>
-
-    <body class="flex flex-col min-h-screen scroll-smooth">
+    <body class="container">
         <header>
-            <nav class="bg-f1logos22-f1 border-gray-200 px-2 py-2.5 dark:bg-gray-800 fixed inset-x-0 top-0">
-                <div class="container flex flex-wrap justify-between items-center mx-auto max-w-screen-4k">
-                    <div class="flex items-center md:ml-10">
-                        <img alt="F1 Logo" class="hidden dark:block h-auto w-20" src="assets/F1_dark.png">
-                        <img alt="F1 Logo" class="block dark:hidden h-auto w-20" src="assets/F1_light.png">               
-                    </div>
-                    <div class="flex items-center">
-                        <a href="index.html" class="cursor-not-allowed  text-f1logos22-f1 hover:text-white transition-colors duration-300">Watch</a>
-                        <a target=_blank href="https://www.formula1.com/en/results.html/2022/drivers.html" class="px-10 text-f1logos22-f1 hover:text-white transition-colors duration-300">Ranking</a>
-                    </div>
-                    <div class="flex items-center md:mr-10">
-                        <a alt="Instagram" target=_blank href="https://instagram.com/f1" class="text-f1logos22-f1"><img class="grayscale h-auto w-7 hover:grayscale-0 transition duration-300" src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"></img></a>
-                    
-                    </div>
-                </div>
-            </nav>
+            <nav class="navbar navbar-default navbar-fixed-top">
+<div class="container-fluid wik">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<b><a class="navbar-brand" href="/index.html">FAS</a></b>
+</div>
+<div class="collapse navbar-collapse" id="myNavbar">
+<ul class="nav navbar-nav">
+<li class="active"><a href="/index.html">Home</a></li>
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">bom sms<span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="phd">bom sms PHD</a></li>
+<li><a href="wa">bom sma WA</a></li>
+<li><a href="sms">bom sms TOKOPED</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
         </header>
-        <main class="mt-20">
-            <div class="container text-center items-center mx-auto">
-                <div class="text-5xl">Start watching</div>
-                <p class="text-base">Click on the play button to start watching. If you see an error, the stream is not live yet. In this case, try again a little later.</p>
-
+        <div class="col-lg-12 wik" align="center" style="margin-top: 90px; margin-bottom: 20px; padding-bottom: 20px;">
+            <marquee class="wik list-group-item h text-muted" style="margin-top: 5%;" scrollamount="3" direction="left">...........TRIMAKASI SUDAH MENGGUNAKAN WEB INI...........</marquee>
+<br>
+<br>
                 <vm-player theme="dark" class="lg:ml-10 lg:mr-10 mt-10 aspect-video object-contain" autoplay style="--vm-player-theme: #FFCC00;">
-                    <vm-hls version="latest" poster="assets/default.jpg">
+                    <vm-hls version="latest" poster="assets/default.jpg" class="wik".>
                         <source data-src="http://38.127.211.18/live/c2eds/ESPN1USA/HLS/index.m3u8" type="application/x-mpegURL" />
                     </vm-hls>
 
@@ -71,12 +81,11 @@
                     </vm-ui>
                 </vm-player>
             </div>
-        </main>
         <footer class="bg-gray-200 text-center lg:text-left dark:bg-gray-900 fixed inset-x-0 bottom-0">
-            <div class="text-gray-700 text-center p-4">
-            Made with ❤️ by 
-            <a class="underline hover:text-gray-500 transition-colors" href="https://github.com/seniorheld/f1tv-rtmp">SeniorHeld</a>
-            </div>
+            <div class="footer fixed-bottom text-center text-white wik">
+<b><span class="glyphicon"></span>© FAS | 2022</b>
+<br />
+</div>
         </footer>
     </body>
 </html>
