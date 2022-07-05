@@ -1,91 +1,92 @@
 <!DOCTYPE html>
-<html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <title>FAS | LIVE</title>
+<html lang="id" >
+<head>
+  <meta charset="UTF-8">
+  <title>ESPN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://unpkg.com/plyr@3/dist/plyr.css'><link rel="stylesheet" href="./style.css">
 
-        <link rel="icon" href="favicon.ico">
-            
-            <link rel="stylesheet" href="https://cdn.wapka.org/007ho2/7f89537eaf606bff49f5cc1a7c24dbca/bootstrap-min.css" />
-<link rel="stylesheet" href="https://cdn.wapka.org/007ho3/2010fa9fb07541adc78a1ec0a8a4fbbf/bootstrap-theme-min.css" />
-<link rel="stylesheet" href="https://cdn.wapka.org/007ho9/5148816261f8045a39260b530ffaeef1/style.css" />
-<script src="https://cdn.wapka.org/007hob/4b57cf46dc8cb95c4cca54afc85e9540/jquery-min.js"></script>
-<script src="https://cdn.wapka.org/007hnx/2f34b630ffe30ba2ff2b91e3f3c322a1/bootstrap-min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet" />
-        <!-- Default theme. ~960B -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vime/core@^5/themes/default.css"/>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+	<video controls crossorigin playsinline></video>
+</div>
+<!-- Plyr resources and browser polyfills are specified in the pen settings -->
+<!-- Hls.js 0.9.x and 0.10.x both have critical bugs affecting this demo. Using fixed git hash to when it was working (0.10.0 pre-release), until https://github.com/video-dev/hls.js/issues/1790 has been resolved -->
+<script src="https://cdn.rawgit.com/video-dev/hls.js/18bb552/dist/hls.min.js"></script>
+<!-- partial -->
+  <script src='https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL'></script>
+<script src='https://unpkg.com/plyr@3'></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const source = 'http://38.127.211.18/live/c2eds/ESPN1USA/HLS/index.m3u8';
+  const video = document.querySelector('video');
 
-        <!-- Optional light theme (extends default). ~400B -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vime/core@^5/themes/light.css"/>
+  const defaultOptions = {};
 
-        <!-- Library and all of its components are lazy loaded, so nothing to sweat about here. ~3kB -->
-        <script type="module" src="https://cdn.jsdelivr.net/npm/@vime/core@^5/dist/vime/vime.esm.js"></script>
-    </head>
-    <body class="container">
-        <header>
-            <nav class="navbar navbar-default navbar-fixed-top">
-<div class="container-fluid wik">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<b><a class="navbar-brand" href="/index.html">FAS</a></b>
-</div>
-<div class="collapse navbar-collapse" id="myNavbar">
-<ul class="nav navbar-nav">
-<li class="active"><a href="/index.html">Home</a></li>
-<li class="dropdown">
-<a class="dropdown-toggle" data-toggle="dropdown" href="#">bom sms<span class="caret"></span></a>
-<ul class="dropdown-menu">
-<li><a href="phd">bom sms PHD</a></li>
-<li><a href="wa">bom sma WA</a></li>
-<li><a href="sms">bom sms TOKOPED</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-        </header>
-        <div class="col-lg-12 wik" align="center" style="margin-top: 90px; margin-bottom: 20px; padding-bottom: 20px;">
-            <marquee class="wik list-group-item h text-muted" style="margin-top: 5%;" scrollamount="3" direction="left">...........TRIMAKASI SUDAH MENGGUNAKAN WEB INI...........</marquee>
-<br>
-<br>
-                <vm-player theme="dark" class="lg:ml-10 lg:mr-10 mt-10 aspect-video object-contain" autoplay style="--vm-player-theme: #FFCC00;">
-                    <vm-hls version="latest" poster="assets/default.jpg" class="wik".>
-                        <source data-src="http://38.127.211.18/live/c2eds/ESPN1USA/HLS/index.m3u8" type="application/x-mpegURL" />
-                    </vm-hls>
+  if (!Hls.isSupported()) {
+    video.src = source;
+    var player = new Plyr(video, defaultOptions);
+  } else {
+    // For more Hls.js options, see https://github.com/dailymotion/hls.js
+    const hls = new Hls();
+    hls.loadSource(source);
 
-                    <vm-ui>
-                        <vm-click-to-play></vm-click-to-play>
-                        <vm-dbl-click-fullscreen></vm-dbl-click-fullscreen>
-                        
-                        <vm-default-settings></vm-default-settings>
-                        <vm-controls full-width active-duration="1800">
-                            <vm-control-group space="bottom">
-                                <vm-scrubber-control></vm-scrubber-control>
-                            </vm-control-group>
-                            <vm-control-group>
-                                <vm-playback-control></vm-playback-control>
-                                <vm-volume-control></vm-volume-control>
-                                <vm-time-progress separator="/"></vm-time-progress>
-                                <vm-control-spacer></vm-control-spacer>
-                                <vm-live-indicator></vm-live-indicator>
-                                <vm-pip-control></vm-pip-control>
-                                <vm-settings-control></vm-settings-control>
-                                <vm-fullscreen-control></vm-fullscreen-control>
-                            </vm-control-group>
-                        </vm-controls>
-                    </vm-ui>
-                </vm-player>
-            </div>
-        <footer class="bg-gray-200 text-center lg:text-left dark:bg-gray-900 fixed inset-x-0 bottom-0">
-            <div class="footer fixed-bottom text-center text-white wik">
-<b><span class="glyphicon"></span>© FAS | 2022</b>
-<br />
-</div>
-        </footer>
-    </body>
+    // From the m3u8 playlist, hls parses the manifest and returns
+    // all available video qualities. This is important, in this approach,
+    // we will have one source on the Plyr player.
+    hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+
+      // Transform available levels into an array of integers (height values).
+      const availableQualities = hls.levels.map(l => l.height);
+      availableQualities.unshift(0); //prepend 0 to quality array
+
+      // Add new qualities to option
+      defaultOptions.quality = {
+        default: 0, //Default - AUTO
+        options: availableQualities,
+        forced: true,
+        onChange: e => updateQuality(e) };
+
+      // Add Auto Label 
+      defaultOptions.i18n = {
+        qualityLabel: {
+          0: 'Auto' } };
+
+
+
+      hls.on(Hls.Events.LEVEL_SWITCHED, function (event, data) {
+        var span = document.querySelector(".plyr__menu__container [data-plyr='quality'][value='0'] span");
+        if (hls.autoLevelEnabled) {
+          span.innerHTML = `AUTO (${hls.levels[data.level].height}p)`;
+        } else {
+          span.innerHTML = `AUTO`;
+        }
+      });
+
+      // Initialize new Plyr player with quality options
+      var player = new Plyr(video, defaultOptions);
+    });
+
+    hls.attachMedia(video);
+    window.hls = hls;
+  }
+
+  function updateQuality(newQuality) {
+    if (newQuality === 0) {
+      window.hls.currentLevel = -1; //Enable AUTO quality if option.value = 0
+    } else {
+      window.hls.levels.forEach((level, levelIndex) => {
+        if (level.height === newQuality) {
+          console.log("Found quality match with " + newQuality);
+          window.hls.currentLevel = levelIndex;
+        }
+      });
+    }
+  }
+});
+</script>
+
+</body>
 </html>
